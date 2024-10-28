@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:4321/fa/docs/advanced/multi-language/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,6 +21,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/organize-files/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -37,6 +39,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/getting-started/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,6 +57,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/configuration/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -71,6 +75,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -88,6 +93,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/markdown/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -105,6 +111,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/syntax-highlighting/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -122,6 +129,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/latex/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -139,6 +147,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/diagrams/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -156,6 +165,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -173,7 +183,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/tags/markdown/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -186,7 +196,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/tags/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -203,29 +213,11 @@
                 href="http://localhost:4321/fa/tags/"
                 />
   </url><url>
-    <loc>http://localhost:4321/fa/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:4321/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="http://localhost:4321/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fa"
-                href="http://localhost:4321/fa/"
-                />
-  </url><url>
     <loc>http://localhost:4321/fa/tags/%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/fa/blog/markdown/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -243,25 +235,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/tags/%D9%85%D8%AB%D8%A7%D9%84/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4321/fa/blog/</loc>
-    <lastmod>2024-03-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:4321/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="http://localhost:4321/zh-cn/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fa"
-                href="http://localhost:4321/fa/blog/"
-                />
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/fa/categories/</loc>
     <xhtml:link
@@ -281,6 +255,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/filetree/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -298,6 +273,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/icon/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -315,6 +291,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/deploy-site/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -332,6 +309,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/advanced/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -348,7 +326,26 @@
                 href="http://localhost:4321/fa/docs/advanced/"
                 />
   </url><url>
+    <loc>http://localhost:4321/fa/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:4321/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="http://localhost:4321/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="http://localhost:4321/fa/"
+                />
+  </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/details/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -366,6 +363,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/about/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -383,6 +381,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/tabs/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -400,6 +399,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/advanced/customization/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -417,6 +417,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/callout/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -434,6 +435,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/cards/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -451,6 +453,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/guide/shortcodes/steps/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -468,6 +471,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -485,6 +489,7 @@
                 />
   </url><url>
     <loc>http://localhost:4321/fa/docs/advanced/comments/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -501,7 +506,26 @@
                 href="http://localhost:4321/fa/docs/advanced/comments/"
                 />
   </url><url>
+    <loc>http://localhost:4321/fa/blog/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:4321/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="http://localhost:4321/zh-cn/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="http://localhost:4321/fa/blog/"
+                />
+  </url><url>
     <loc>http://localhost:4321/fa/showcase/</loc>
+    <lastmod>2024-10-28T16:21:04+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
