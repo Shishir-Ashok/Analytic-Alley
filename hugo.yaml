@@ -1,7 +1,7 @@
 theme: "hextra"
 # Configuration
 baseURL: "https://shishir-ashok.netlify.app/"
-title: "Hextra"
+title: "Shishir Ashok"
 
 enableRobotsTXT: true
 enableGitInfo: true
@@ -128,7 +128,7 @@ params:
     enable: true
     base: "https://github.com/Shishir-Ashok/Analytic-Alley/blob/main/public/"
 
-  blog:
+  portfolio:
     list:
       displayTags: true
       # date | lastmod | publishDate | title | weight
