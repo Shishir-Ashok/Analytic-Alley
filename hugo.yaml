@@ -80,7 +80,7 @@ menu:
   #     weight: 2
 
 params:
-  description: Modern, responsive, batteries-included Hugo theme for creating beautiful static websites.
+  description: Transforming data into delightful stories - where numbers meet narrative 
 
   navbar:
     displayTitle: true
