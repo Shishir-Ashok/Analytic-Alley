@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:4321/tags/data-analysis/</loc>
+    <loc>https://shishir-ashok.netlify.app/tags/data-analysis/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/portfolio/diwali-sales/diwali_sales/</loc>
+    <loc>https://shishir-ashok.netlify.app/portfolio/diwali-sales/diwali_sales/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/tags/markdown/</loc>
+    <loc>https://shishir-ashok.netlify.app/tags/markdown/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/tags/r/</loc>
+    <loc>https://shishir-ashok.netlify.app/tags/r/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/tags/</loc>
+    <loc>https://shishir-ashok.netlify.app/tags/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/categories/</loc>
+    <loc>https://shishir-ashok.netlify.app/categories/</loc>
   </url><url>
-    <loc>http://localhost:4321/</loc>
+    <loc>https://shishir-ashok.netlify.app/portfolio/</loc>
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4321/portfolio/</loc>
-    <lastmod>2024-10-29T04:39:14+00:00</lastmod>
+    <loc>https://shishir-ashok.netlify.app/</loc>
+    <lastmod>2024-10-29T04:44:06+00:00</lastmod>
   </url>
 </urlset>

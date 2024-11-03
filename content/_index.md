@@ -31,7 +31,7 @@ layout: hextra-home
     title="Diwali Sales - Data Analysis"
     subtitle="Analysing a public dataset from tidytuesday github repo Dataset added on: 2023-11-14"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
-    image="/portfolio/Diwali%20Sales/state-wise.png"
+    image="/portfolio/Diwali%20Sales/top_spending_age_group.png"
     imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
     link="portfolio/diwali-sales/diwali_sales/"

@@ -57,17 +57,12 @@ tags:
     - Use insights from occupational data to engage with customers through personalized communication. Offer exclusive deals and loyalty programs for professionals.
     
     
-
-``` r
+```{r}
 library(extrafont)
 library(tidyverse)
 library(scales) 
 
 loadfonts(device = "win")
-```
-
-
-``` r
 theme_set(
     theme_minimal() +
     theme(text = element_text(family = "Roboto"))
@@ -79,30 +74,9 @@ col_theme <- c("#FF3200", "#011A51", "#FBA600", "#F8C1A6", "#B3E0BF",
 "#328C97", "#33FF57", "#3357FF", "#FF33A1", "#A133FF")
 ```
 
-
-``` r
+```{r}
 diwali <- read.csv("Diwali Sales Data.csv")
 glimpse(diwali)
-```
-
-```
-## Rows: 11,251
-## Columns: 15
-## $ User_ID          <int> 1002903, 1000732, 1001990, 1001425, 1000588, 1000588,…
-## $ Cust_name        <chr> "Sanskriti", "Kartik", "Bindu", "Sudevi", "Joni", "Jo…
-## $ Product_ID       <chr> "P00125942", "P00110942", "P00118542", "P00237842", "…
-## $ Gender           <chr> "F", "F", "F", "M", "M", "M", "F", "F", "M", "F", "M"…
-## $ Age.Group        <chr> "26-35", "26-35", "26-35", "0-17", "26-35", "26-35", …
-## $ Age              <int> 28, 35, 35, 16, 28, 28, 25, 61, 35, 26, 34, 20, 20, 2…
-## $ Marital_Status   <int> 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0,…
-## $ State            <chr> "Maharashtra", "Andhra\xa0Pradesh", "Uttar Pradesh", …
-## $ Zone             <chr> "Western", "Southern", "Central", "Southern", "Wester…
-## $ Occupation       <chr> "Healthcare", "Govt", "Automobile", "Construction", "…
-## $ Product_Category <chr> "Auto", "Auto", "Auto", "Auto", "Auto", "Auto", "Auto…
-## $ Orders           <int> 1, 3, 3, 2, 2, 1, 4, 1, 2, 4, 1, 2, 2, 4, 3, 2, 3, 1,…
-## $ Amount           <dbl> 23952.00, 23934.00, 23924.00, 23912.00, 23877.00, 238…
-## $ Status           <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-## $ unnamed1         <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
 ```
 ### Data Cleaning
 - Renaming Andhra\\xa0Pradesh to Andhra Pradesh.
@@ -111,8 +85,7 @@ glimpse(diwali)
 - Removing columns that contain only NA values.
 - Getting rid of rows where there aren't any values recorded for the Amount column.
 
-
-``` r
+```{r}
 diwali <- diwali |> 
     mutate(State = recode(State, "Andhra\xa0Pradesh" = "Andhra Pradesh"), .keep = "all" ) |> 
     mutate(Marital_Status = as.factor(Marital_Status)) |> 
@@ -122,31 +95,12 @@ diwali <- diwali |>
 glimpse(diwali)
 ```
 
-```
-## Rows: 11,239
-## Columns: 13
-## $ User_ID          <int> 1002903, 1000732, 1001990, 1001425, 1000588, 1000588,…
-## $ Cust_name        <chr> "Sanskriti", "Kartik", "Bindu", "Sudevi", "Joni", "Jo…
-## $ Product_ID       <chr> "P00125942", "P00110942", "P00118542", "P00237842", "…
-## $ Gender           <chr> "F", "F", "F", "M", "M", "M", "F", "M", "F", "M", "F"…
-## $ Age.Group        <chr> "26-35", "26-35", "26-35", "0-17", "26-35", "26-35", …
-## $ Age              <int> 28, 35, 35, 16, 28, 28, 25, 35, 26, 34, 20, 20, 26, 2…
-## $ Marital_Status   <fct> 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1,…
-## $ State            <chr> "Maharashtra", "Andhra Pradesh", "Uttar Pradesh", "Ka…
-## $ Zone             <chr> "Western", "Southern", "Central", "Southern", "Wester…
-## $ Occupation       <chr> "Healthcare", "Govt", "Automobile", "Construction", "…
-## $ Product_Category <chr> "Auto", "Auto", "Auto", "Auto", "Auto", "Auto", "Auto…
-## $ Orders           <int> 1, 3, 3, 2, 2, 1, 4, 2, 4, 1, 2, 2, 4, 2, 1, 1, 1, 4,…
-## $ Amount           <dbl> 23952.00, 23934.00, 23924.00, 23912.00, 23877.00, 238…
-```
-
 </br>
 
 ---
 
 ### What age group spent the most?
-
-``` r
+```{r}
 diwali |> 
     select(Age.Group, Amount) |> 
     arrange(Age.Group) |> 
@@ -166,11 +120,8 @@ diwali |>
     coord_flip()
 ```
 
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-
 ### What is the expenditure across genders for each age group
-
-``` r
+```{r}
 diwali |> 
     select(Age.Group, Gender, Amount) |> 
     arrange(Age.Group) |> 
@@ -190,12 +141,9 @@ diwali |>
     coord_flip()
 ```
 
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-
 
 ### What are the occupations of people between 26-35
-
-``` r
+```{r}
 diwali |> 
     select(Age.Group, Occupation) |> 
     filter(Age.Group == "26-35") |> 
@@ -215,11 +163,8 @@ diwali |>
     coord_flip()
 ```
 
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
-
 ### Which state spent the most (segregated by gender)?
-
-``` r
+```{r}
 diwali |> 
     select(State, Amount, Gender) |> 
     group_by(State, Gender) |> 
@@ -239,12 +184,9 @@ diwali |>
     coord_flip()
 ```
 
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-
 
 ### Finding expenditure of females and males along with thier marital status
-
-``` r
+```{r}
 diwali |> 
     select(State, Marital_Status, Gender, Amount) |>
     arrange(State, Gender) |> 
@@ -268,7 +210,5 @@ diwali |>
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma)
 ```
-
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
