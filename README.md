@@ -12,12 +12,13 @@ Welcome to Analytic Alley! This repository is dedicated to data analysis project
 # 🌐 About Analytic Alley
 
 Analytic Alley is designed as a platform to explore and share data stories, statistical techniques, and data visualization best practices. Each project here delves into a unique dataset, highlighting the nuances and insights uncovered through detailed analysis.
-Key Features
 
-    Multilingual Analysis: Projects utilize R and Python, offering flexibility and diversity in analysis techniques.
-    Regular Updates: New analyses and datasets are added periodically, so check back often for the latest insights.
-    Interactive Visualizations: Where applicable, analyses include interactive visualizations to enhance data comprehension.
-    Documentation and Code: Each project includes thorough documentation and clean, reusable code for those interested in replicating or building on the work.
+### Key Features
+
+- Multilingual Analysis: Projects utilize R and Python, offering flexibility and diversity in analysis techniques.
+- Regular Updates: New analyses and datasets are added periodically, so check back often for the latest insights.
+- Interactive Visualizations: Where applicable, analyses include interactive visualizations to enhance data comprehension.
+- Documentation and Code: Each project includes thorough documentation and clean, reusable code for those interested in replicating or building on the work.
 
 # 🛠️ Projects
 
