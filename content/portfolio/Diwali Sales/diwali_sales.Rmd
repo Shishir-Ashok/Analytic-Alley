@@ -190,6 +190,7 @@ diwali |>
 </br>
 </br>
 
+
 ### Finding expenditure of females and males along with thier marital status
 ```{r}
 diwali |> 
