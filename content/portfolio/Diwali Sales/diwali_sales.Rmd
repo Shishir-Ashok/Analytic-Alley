@@ -96,8 +96,7 @@ glimpse(diwali)
 ```
 
 </br>
-
----
+</br>
 
 ### What age group spent the most?
 ```{r}
@@ -119,6 +118,8 @@ diwali |>
     scale_y_continuous(labels = comma) +
     coord_flip()
 ```
+</br>
+</br>
 
 ### What is the expenditure across genders for each age group
 ```{r}
@@ -140,7 +141,8 @@ diwali |>
     scale_y_continuous(labels = comma) +
     coord_flip()
 ```
-
+</br>
+</br>
 
 ### What are the occupations of people between 26-35
 ```{r}
@@ -162,6 +164,8 @@ diwali |>
     scale_y_continuous(labels = comma) +
     coord_flip()
 ```
+</br>
+</br>
 
 ### Which state spent the most (segregated by gender)?
 ```{r}
@@ -183,7 +187,8 @@ diwali |>
     scale_y_continuous(labels = comma) +
     coord_flip()
 ```
-
+</br>
+</br>
 
 ### Finding expenditure of females and males along with thier marital status
 ```{r}

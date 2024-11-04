@@ -96,6 +96,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -185,6 +189,9 @@
 
   
 &lt;/div&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;div class=&#34;steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]&#34;&gt;
 &lt;h3&gt;Data Cleaning&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;data-cleaning&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#data-cleaning&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Renaming Andhra\xa0Pradesh to Andhra Pradesh.&lt;/li&gt;
@@ -247,7 +254,7 @@
   
 &lt;/div&gt;
 &lt;/br&gt;
-&lt;hr&gt;
+&lt;/br&gt;
 &lt;h3&gt;What age group spent the most?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-age-group-spent-the-most&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#what-age-group-spent-the-most&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -281,6 +288,8 @@
   
 &lt;/div&gt;
 &lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h3&gt;What is the expenditure across genders for each age group&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-the-expenditure-across-genders-for-each-age-group&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#what-is-the-expenditure-across-genders-for-each-age-group&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -314,6 +323,8 @@
   
 &lt;/div&gt;
 &lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h3&gt;What are the occupations of people between 26-35&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-are-the-occupations-of-people-between-26-35&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#what-are-the-occupations-of-people-between-26-35&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -347,6 +358,8 @@
   
 &lt;/div&gt;
 &lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h3&gt;Which state spent the most (segregated by gender)?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;which-state-spent-the-most-segregated-by-gender&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#which-state-spent-the-most-segregated-by-gender&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -380,6 +393,8 @@
   
 &lt;/div&gt;
 &lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h3&gt;Finding expenditure of females and males along with thier marital status&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;finding-expenditure-of-females-and-males-along-with-thier-marital-status&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#finding-expenditure-of-females-and-males-along-with-thier-marital-status&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -418,6 +433,7 @@
   
 &lt;/div&gt;
 &lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;/div&gt;
 
       </description>
     </item>

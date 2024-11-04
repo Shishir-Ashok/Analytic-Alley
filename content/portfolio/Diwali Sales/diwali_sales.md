@@ -56,7 +56,11 @@ tags:
 4. **Enhanced Customer Engagement:**
     - Use insights from occupational data to engage with customers through personalized communication. Offer exclusive deals and loyalty programs for professionals.
     
-    
+<br/>
+<br/>
+
+---
+<br/>
 
 ``` r
 library(extrafont)
@@ -65,7 +69,6 @@ library(scales)
 
 loadfonts(device = "win")
 ```
-
 
 ``` r
 theme_set(
@@ -104,6 +107,11 @@ glimpse(diwali)
 ## $ Status           <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
 ## $ unnamed1         <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
 ```
+<br/>
+
+--- 
+{{% steps %}}
+
 ### Data Cleaning
 - Renaming Andhra\\xa0Pradesh to Andhra Pradesh.
 - Converting Marital_Status column values to a factor.
@@ -141,8 +149,7 @@ glimpse(diwali)
 ```
 
 </br>
-
----
+</br>
 
 ### What age group spent the most?
 
@@ -167,9 +174,10 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+</br>
+</br>
 
 ### What is the expenditure across genders for each age group
-
 ``` r
 diwali |> 
     select(Age.Group, Gender, Amount) |> 
@@ -191,7 +199,8 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-
+</br>
+</br>
 
 ### What are the occupations of people between 26-35
 
@@ -216,6 +225,8 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+</br>
+</br>
 
 ### Which state spent the most (segregated by gender)?
 
@@ -240,7 +251,8 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-
+</br>
+</br>
 
 ### Finding expenditure of females and males along with thier marital status
 
@@ -271,4 +283,4 @@ diwali |>
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
-
+{{% /steps %}}
