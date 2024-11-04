@@ -50,7 +50,7 @@ menu:
       weight: 1
     - name: GitHub
       weight: 2
-      url: "https://github.com/imfing/hextra"
+      url: "https://github.com/Shishir-Ashok/"
       params:
         icon: github
     - name: LinkedIn
