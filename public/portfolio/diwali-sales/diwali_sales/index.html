@@ -48,7 +48,7 @@ Age Group Spending:" />
   <meta itemprop="description" content="Exploring Diwali Sales Data Context The Diwali Sales dataset, featured in the TidyTuesday project for the week of November 14, 2023, provides a comprehensive look at retail sales during the Diwali festival in India. It offers a detailed snapshot of consumer behavior during one of the most significant festive periods in India. Key Business Questions Which age group spends the most during Diwali? How does expenditure vary across genders within each age group? What are the common occupations of individuals in the highest spending age group? Which states have the highest spending, and how does this vary by gender? How does marital status influence spending patterns across different states and genders? Insights and Trends Age Group Spending:">
   <meta itemprop="datePublished" content="2024-10-29T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-11-04T09:46:21+00:00">
-  <meta itemprop="wordCount" content="1248">
+  <meta itemprop="wordCount" content="1278">
   <meta itemprop="image" content="http://localhost:4321/portfolio/Diwali%20Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png">
   <meta itemprop="keywords" content="Markdown,Data Analysis,R">
   <meta name="twitter:card" content="summary_large_image">
@@ -374,16 +374,18 @@ Age Group Spending:" />
 </ul>
 </li>
 </ol>
-</br>
-</br>
+<br/>
+<br/>
 <hr>
-</br>
+<br/>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">extrafont</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">scales</span><span class="p">)</span> </span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">scales</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">loadfonts</span><span class="p">(</span><span class="n">device</span> <span class="o">=</span> <span class="s">&#34;win&#34;</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -398,9 +400,7 @@ Age Group Spending:" />
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">loadfonts</span><span class="p">(</span><span class="n">device</span> <span class="o">=</span> <span class="s">&#34;win&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">theme_set</span><span class="p">(</span>
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">theme_set</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme_minimal</span><span class="p">()</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">family</span> <span class="o">=</span> <span class="s">&#34;Roboto&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
@@ -550,6 +550,7 @@ Age Group Spending:" />
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">comma</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">coord_flip</span><span class="p">()</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
@@ -585,6 +586,7 @@ Age Group Spending:" />
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">comma</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">coord_flip</span><span class="p">()</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
@@ -620,6 +622,7 @@ Age Group Spending:" />
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">comma</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">coord_flip</span><span class="p">()</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
@@ -655,6 +658,7 @@ Age Group Spending:" />
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">comma</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">coord_flip</span><span class="p">()</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
@@ -695,6 +699,7 @@ Age Group Spending:" />
 </span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="s">&#34;Expenditure&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">comma</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"

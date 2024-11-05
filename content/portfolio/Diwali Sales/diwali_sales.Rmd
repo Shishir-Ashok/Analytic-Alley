@@ -118,6 +118,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 </br>
@@ -141,6 +142,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 </br>
@@ -164,6 +166,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 </br>
@@ -187,6 +190,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 </br>
@@ -216,6 +220,7 @@ diwali |>
         y = "Expenditure"
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     scale_y_continuous(labels = comma)
 ```
 

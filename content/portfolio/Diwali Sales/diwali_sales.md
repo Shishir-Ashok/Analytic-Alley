@@ -59,23 +59,22 @@ tags:
     - Use insights from occupational data to engage with customers through personalized communication. Offer exclusive deals and loyalty programs for professionals.
     
 
-</br>
-</br>
+<br/>
+<br/>
 
 ---
 
-</br>
-
+<br/>
 
 ``` r
 library(extrafont)
 library(tidyverse)
 library(scales) 
+
+loadfonts(device = "win")
 ```
 
 ``` r
-loadfonts(device = "win")
-
 theme_set(
     theme_minimal() +
     theme(text = element_text(family = "Roboto"))
@@ -170,6 +169,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 
@@ -196,6 +196,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 
@@ -222,6 +223,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 
@@ -248,6 +250,7 @@ diwali |>
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
     scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
 
@@ -280,6 +283,7 @@ diwali |>
         y = "Expenditure"
             ) +
     theme(plot.title = element_text(size = 18, face = "bold")) +
+    guides(fill = guide_legend(reverse = TRUE)) +
     scale_y_continuous(labels = comma)
 ```
 
