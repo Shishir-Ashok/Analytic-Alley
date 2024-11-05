@@ -1,7 +1,8 @@
 ---
 title: Diwali Sales Data
 date: 2024-10-29
-thumbnail: /portfolio/Diwali%20Sales/top_spending_age_group.png
+images: 
+  - /portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png
 authors:
   - name: Shishir Ashok
     link: https://github.com/shishir-ashok
