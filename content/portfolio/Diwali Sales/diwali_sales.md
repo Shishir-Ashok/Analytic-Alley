@@ -18,11 +18,11 @@ tags:
 
 ### Key Business Questions
 
-1. Which age group spends the most during Diwali?
-2. How does expenditure vary across genders within each age group?
-3. What are the common occupations of individuals in the highest spending age group?
-4. Which states have the highest spending, and how does this vary by gender?
-5. How does marital status influence spending patterns across different states and genders?
+1. [Which age group spends the most during Diwali?](#what-age-group-spent-the-most)
+2. [How does expenditure vary across genders within each age group?](#what-is-the-expenditure-across-genders-for-each-age-group)
+3. [What are the common occupations of individuals in the highest spending age group?](#what-are-the-occupations-of-people-between-26-35)
+4. [Which states have the highest spending, and how does this vary by gender?](#which-state-spent-the-most-segregated-by-gender)
+5. [How does marital status influence spending patterns across different states and genders?](#finding-expenditure-of-females-and-males-along-with-thier-marital-status)
 
 ### Insights and Trends
 
@@ -85,6 +85,7 @@ glimpse(diwali)
 ## $ Status           <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
 ## $ unnamed1         <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
 ```
+
 ### Data Cleaning
 - Renaming Andhra\\xa0Pradesh to Andhra Pradesh.
 - Converting Marital_Status column values to a factor.
@@ -124,7 +125,11 @@ glimpse(diwali)
 </br>
 
 ### What age group spent the most?
-
+{{< tabs items="Visual,Code" defaultIndex="0" >}}
+{{< tab >}}
+<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+{{< /tab >}}
+{{< tab >}}
 ``` r
 diwali |> 
     select(Age.Group, Amount) |> 
@@ -145,13 +150,17 @@ diwali |>
     guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
-
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+{{< /tab >}}
+{{< /tabs >}}
 
 </br>
 
 ### What is the expenditure across genders for each age group
-
+{{< tabs items="Visual,Code" defaultIndex="0" >}}
+{{< tab >}}
+<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+{{< /tab >}}
+{{< tab >}}
 ``` r
 diwali |> 
     select(Age.Group, Gender, Amount) |> 
@@ -172,13 +181,17 @@ diwali |>
     guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
-
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+{{< /tab >}}
+{{< /tabs >}}
 
 </br>
 
 ### What are the occupations of people between 26-35
-
+{{< tabs items="Visual,Code" defaultIndex="0" >}}
+{{< tab >}}
+<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+{{< /tab >}}
+{{< tab >}}
 ``` r
 diwali |> 
     select(Age.Group, Occupation) |> 
@@ -199,13 +212,19 @@ diwali |>
     guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
-
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+{{< /tab >}}
+{{< /tabs >}}
 
 </br>
 
 ### Which state spent the most (segregated by gender)?
+{{< tabs items="Visual,Code" defaultIndex="0" >}}
 
+    {{< tab >}}
+<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+    {{< /tab >}}
+
+    {{< tab >}}
 ``` r
 diwali |> 
     select(State, Amount, Gender) |> 
@@ -226,14 +245,18 @@ diwali |>
     guides(fill = guide_legend(reverse = TRUE)) +
     coord_flip()
 ```
+    {{< /tab >}}
 
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-
+{{< /tabs >}}
 </br>
 
 
 ### Finding expenditure of females and males along with thier marital status
-
+{{< tabs items="Visual,Code" defaultIndex="0" >}}
+{{< tab >}}
+<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+{{< /tab >}}
+{{< tab >}}
 ``` r
 diwali |> 
     select(State, Marital_Status, Gender, Amount) |>
@@ -259,7 +282,5 @@ diwali |>
     guides(fill = guide_legend(reverse = TRUE)) +
     scale_y_continuous(labels = comma)
 ```
-
-<img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png" width="672" />
-
-
+{{< /tab >}}
+{{< /tabs >}}
