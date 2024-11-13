@@ -10,13 +10,13 @@ layout: hextra-home
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-headline >}}
-  Transforming data into delightful stories&nbsp;<br class="sm:hx-block hx-hidden" />-where numbers meet narrative
+  Hello!
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle >}}
-  Because magic isn’t always about rabbits and hats.
+  I'm a data scientist, transforming data into delightful stories&nbsp;<br class="sm:hx-block hx-hidden" />where numbers meet narrative --- because magic isn’t always&nbsp;<br class="sm:hx-block hx-hidden" />about rabbits and hats.
 {{< /hextra/hero-subtitle >}}
 </div>
 

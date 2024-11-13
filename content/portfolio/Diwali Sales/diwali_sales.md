@@ -13,19 +13,16 @@ tags:
   - R
 ---
 
-## Exploring Diwali Sales Data
-
-### Context
 
 - The Diwali Sales dataset, featured in the [TidyTuesday project](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-11-14/readme.md) for the week of November 14, 2023, provides a comprehensive look at retail sales during the Diwali festival in India. It offers a detailed snapshot of consumer behavior during one of the most significant festive periods in India.
 
 ### Key Business Questions
 
-1. **Which age group spends the most during Diwali?**
-2. **How does expenditure vary across genders within each age group?**
-3. **What are the common occupations of individuals in the highest spending age group?**
-4. **Which states have the highest spending, and how does this vary by gender?**
-5. **How does marital status influence spending patterns across different states and genders?**
+1. Which age group spends the most during Diwali?
+2. How does expenditure vary across genders within each age group?
+3. What are the common occupations of individuals in the highest spending age group?
+4. Which states have the highest spending, and how does this vary by gender?
+5. How does marital status influence spending patterns across different states and genders?
 
 ### Insights and Trends
 
@@ -63,29 +60,6 @@ tags:
 <br/>
 
 ---
-
-<br/>
-
-``` r
-library(extrafont)
-library(tidyverse)
-library(scales) 
-
-loadfonts(device = "win")
-```
-
-``` r
-theme_set(
-    theme_minimal() +
-    theme(text = element_text(family = "Roboto"))
-    )
-
-col_theme <- c("#FF3200", "#011A51", "#FBA600", "#F8C1A6", "#B3E0BF",
-"#2A9D3D", "#EDF181", "#DB7003", "#A30000", "#D1AAC2",
-"#A5506D", "#97D1D9", "#916C37", "#FF5733", "#FF0066", 
-"#328C97", "#33FF57", "#3357FF", "#FF33A1", "#A133FF")
-```
-
 
 ``` r
 diwali <- read.csv("Diwali Sales Data.csv")
@@ -148,7 +122,6 @@ glimpse(diwali)
 ```
 
 </br>
-</br>
 
 ### What age group spent the most?
 
@@ -174,7 +147,7 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-</br>
+
 </br>
 
 ### What is the expenditure across genders for each age group
@@ -201,7 +174,7 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-</br>
+
 </br>
 
 ### What are the occupations of people between 26-35
@@ -228,7 +201,7 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
-</br>
+
 </br>
 
 ### Which state spent the most (segregated by gender)?
@@ -255,7 +228,7 @@ diwali |>
 ```
 
 <img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-</br>
+
 </br>
 
 
