@@ -3,19 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:4321/tags/data-analysis/</loc>
-    <lastmod>2024-11-05T19:06:41+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4321/portfolio/diwali-sales/diwali_sales/</loc>
-    <lastmod>2024-11-05T19:06:41+00:00</lastmod>
+    <lastmod>2024-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/tags/markdown/</loc>
-    <lastmod>2024-11-05T19:06:41+00:00</lastmod>
+    <lastmod>2024-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/tags/r/</loc>
-    <lastmod>2024-11-05T19:06:41+00:00</lastmod>
+    <lastmod>2024-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/tags/</loc>
-    <lastmod>2024-11-05T19:06:41+00:00</lastmod>
+    <lastmod>2024-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/portfolio/when-maximum-meets-square-root/when-maximum-meets-square-root/</loc>
+    <lastmod>2024-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4321/portfolio/diwali-sales/diwali_sales/</loc>
+    <lastmod>2024-11-13T01:21:32+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/categories/</loc>
   </url><url>
@@ -23,6 +26,6 @@
     <lastmod>2024-10-29T04:39:14+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4321/</loc>
-    <lastmod>2024-11-03T22:57:48+00:00</lastmod>
+    <lastmod>2024-11-13T00:52:14+00:00</lastmod>
   </url>
 </urlset>

@@ -8,7 +8,6 @@ authors:
     link: https://github.com/shishir-ashok
     image: https://github.com/shishir-ashok.png
 tags:
-  - Markdown
   - Data Analysis
   - R
 ---

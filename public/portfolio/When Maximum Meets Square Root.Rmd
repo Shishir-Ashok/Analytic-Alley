@@ -1,0 +1,85 @@
+---
+title: When Maximum Meets Square Root
+date: 2024-12-05
+images: 
+  - /portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png
+authors:
+  - name: Shishir Ashok
+    link: https://github.com/shishir-ashok
+    image: https://github.com/shishir-ashok.png
+tags:
+  - Markdown
+  - Data Analysis
+  - R
+---
+
+I recently came across a YouTube Short by Grant Sanderson, and I have to say, it blew my mind! The idea that the distribution of the maximum of two random numbers and the distribution of the square root of one of those numbers are the same is wild! How can two seemingly unrelated operations — taking the maximum and taking the square root—result in the exact same distribution?
+
+What really fascinated me was how he visualized the concept. He explained that by taking two random numbers (uniformly sampled between 0 and 1), you can compute their maximum. Now, if you take one of those numbers and compute its square root, you'd expect a different result, right? Well, it turns out, both operations lead to the same probability distribution, and the explanation is pure brilliance!
+
+Inspired by this, I decided to write a quick R script to simulate both of these processes and compare their distributions. Let me walk you through the code I came up with, and I'll explain how it relates to the fascinating idea Grant Sanderson shared.
+
+```{r}
+n_samples <- 100000
+
+# Generate 100,000 pairs of random numbers between 0 and 1
+rand_pairs <- replicate(n_samples, runif(2, min = 0, max = 1))
+
+# Calculate the maximum of each pair
+max_rand <- apply(rand_pairs, 2, max)
+
+# Calculate the square root of a randomly selected number from each pair
+sqrt_rand <- apply(rand_pairs, 2, function(x) sqrt(sample(x, 1)))
+```
+
+
+```{r}
+# Plot the density of both distributions
+plot(density(max_rand), col = 'blue', lwd = 2, main = 'Comparing Distributions')
+lines(density(sqrt_rand), col = 'green', lwd = 2)
+legend('topleft', legend = c('Max()', 'Square Root'),
+       col = c('blue', 'green'), lwd = 4, lty = c(1, 1), box.lwd = 0)
+```
+
+
+### Why This is So Cool
+
+What I love about this is that it's not just a random coincidence. There's a beautiful symmetry in how the square root transformation and the maximum function work in tandem to produce the same kind of distribution. It’s a reminder of how interconnected different concepts in probability and statistics can be, and it really made me appreciate the elegance of randomness!
+
+```{r}
+library(plotly)
+
+plot_density <- function(n_samples) {
+  # Generate random pairs of numbers
+  rand_pairs <- replicate(n_samples, runif(2, min = 0, max = 1))
+  
+  # Calculate the maximum of each pair
+  max_rand <- apply(rand_pairs, 2, max)
+  
+  # Calculate the square root of a randomly selected number from each pair
+  sqrt_rand <- apply(rand_pairs, 2, function(x) sqrt(sample(x, 1)))
+  
+  # Create a plotly object for the density plots
+  p <- plot_ly() %>%
+    add_trace(x = max_rand, type = "histogram", name = "Max of Random Pair", 
+              opacity = 0.7, marker = list(color = 'blue', line = list(width = 0.5))) %>%
+    add_trace(x = sqrt_rand, type = "histogram", name = "Square Root of Random Value", 
+              opacity = 0.7, marker = list(color = 'green', line = list(width = 0.5))) %>%
+    layout(title = "Comparing Distributions: Max vs Square Root",
+           xaxis = list(title = 'Value'),
+           yaxis = list(title = 'Density'),
+           barmode = "overlay")
+  
+  p
+}
+
+# Create a slider and plot for varying n_samples
+n_samples <- 1000
+plot_density(n_samples)
+
+```
+
+
+---
+
+If you haven't checked out Grant Sanderson's [YouTube Short](https://www.youtube.com/shorts/Pny70rNPJLk) yet, I highly recommend it. His enthusiasm and explanation really brought this concept to life!

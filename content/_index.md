@@ -36,4 +36,14 @@ layout: hextra-home
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
     link="portfolio/diwali-sales/diwali_sales/"
   >}}
+
+  {{< hextra/feature-card
+    title="When Maximum Meets Square Root"
+    subtitle="Exploring the Fascinating Connection Between Probability Distributions"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    image="/portfolio/When Maximum Meets Square Root/thumbnail.png"
+    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+    link="portfolio/when-maximum-meets-square-root/when-maximum-meets-square-root"
+  >}}
 {{< /hextra/feature-grid >}}
