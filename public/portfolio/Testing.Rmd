@@ -1,8 +1,0 @@
-# This is a test
-
-- Wanting to check how Rmd files would work on Hugo
-
-```{r}
-glimpse(mtcars)
-```
-

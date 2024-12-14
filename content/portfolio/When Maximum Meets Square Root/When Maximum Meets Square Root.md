@@ -10,6 +10,7 @@ authors:
 tags:
   - Statistics
   - R
+editURL: https://github.com/Shishir-Ashok/Analytic-Alley/blob/main/public/portfolio/When%20Maximum%20Meets%20Square%20Root/When%20Maximum%20Meets%20Square%20Root.Rmd
 ---
 
 I recently came across a [YouTube Short](https://www.youtube.com/shorts/Pny70rNPJLk) by Grant Sanderson, and I have to say, it blew my mind! The idea that the distributions describing the result of the maximum of two random numbers and the square root of one of those numbers are the same is simply too good to be true. His explanation in the video is pure brilliance!
