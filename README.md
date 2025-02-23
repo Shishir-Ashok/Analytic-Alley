@@ -22,5 +22,7 @@ Analytic Alley is designed as a platform to explore and share data stories, stat
 
 # 🛠️ Projects
 
-- **[Diwali Sales dataset](https://github.com/Shishir-Ashok/Analytic-Alley/tree/main/content/portfolio/Diwali%20Sales)**: detailed snapshot of consumer behavior during one of the most significant festive periods in India.
-- (List to get appended with newer project)
+- **[Diwali Sales dataset](https://github.com/Shishir-Ashok/Analytic-Alley/tree/main/public/portfolio/Diwali%20Sales)**: Detailed snapshot of consumer behavior during one of the most significant festive periods in India.
+- **[Olympics 2024 Volleyball Analysis](https://github.com/alagani414/R-Group-Project)**: Analysis of volleyball and beach volleyball performance, combining athlete attributes (height, age, gender) with team dynamics and match outcomes.
+- **[Dublin Crime Spatial Data Analysis](https://github.com/Shishir-Ashok/dublin_crime_analysis)**: Exploring the spatial patterns of crime across Dublin and investigatigating the influence of nearby infrastructure on these incidents.
+- **[When Maximum Meets Square Root](https://github.com/Shishir-Ashok/Analytic-Alley/tree/main/public/portfolio/When%20Maximum%20Meets%20Square%20Root)**: Exploring the fascinating connection between probability distributions.
