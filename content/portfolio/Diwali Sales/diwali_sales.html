@@ -1,0 +1,432 @@
+---
+title: Diwali Sales Data
+date: 2024-10-29
+images: 
+  - /portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png
+authors:
+  - name: Shishir Ashok
+    link: https://github.com/shishir-ashok
+    image: https://github.com/shishir-ashok.png
+tags:
+  - Markdown
+  - Data Analysis
+  - R
+---
+
+
+
+<div id="exploring-diwali-sales-data" class="section level2">
+<h2>Exploring Diwali Sales Data</h2>
+<div id="context" class="section level3">
+<h3>Context</h3>
+<ul>
+<li>The Diwali Sales dataset, featured in the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-11-14/readme.md">TidyTuesday project</a> for the week of November 14, 2023, provides a comprehensive look at retail sales during the Diwali festival in India. It offers a detailed snapshot of consumer behavior during one of the most significant festive periods in India.</li>
+</ul>
+</div>
+<div id="key-business-questions" class="section level3">
+<h3>Key Business Questions</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Which age group spends the most during Diwali?</strong></li>
+<li><strong>How does expenditure vary across genders within each age group?</strong></li>
+<li><strong>What are the common occupations of individuals in the highest spending age group?</strong></li>
+<li><strong>Which states have the highest spending, and how does this vary by gender?</strong></li>
+<li><strong>How does marital status influence spending patterns across different states and genders?</strong></li>
+</ol>
+</div>
+<div id="insights-and-trends" class="section level3">
+<h3>Insights and Trends</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Age Group Spending:</strong>
+<ul>
+<li>The age group 26-35 spends the most during Diwali. This demographic is likely to have higher disposable income and a greater inclination towards festive shopping.</li>
+</ul></li>
+<li><strong>Gender-Based Expenditure:</strong>
+<ul>
+<li>Within each age group, spending patterns vary significantly between genders. In general, females tend to spend more than males across all age groups.</li>
+</ul></li>
+<li><strong>Occupational Insights:</strong>
+<ul>
+<li>For individuals aged 26-35, the predominant occupations are in IT, healthcare, aviation, and banking. This suggests that marketing strategies aimed at these professional groups could be advantageous.</li>
+</ul></li>
+<li><strong>State-Wise Spending:</strong>
+<ul>
+<li>States such as Uttar Pradesh, Maharashtra, Karnataka, and Delhi rank among the highest in spending.</li>
+</ul></li>
+<li><strong>Marital Status Influence:</strong>
+<ul>
+<li>Married individuals tend to spend more than unmarried ones. This trend is consistent across both genders.</li>
+</ul></li>
+</ol>
+</div>
+<div id="recommendations" class="section level3">
+<h3>Recommendations</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Targeted Marketing Campaigns:</strong>
+<ul>
+<li>Focus marketing efforts on the 26-35 age group, especially targeting professionals and business owners. Tailor campaigns to highlight products and offers that appeal to this demographic.</li>
+</ul></li>
+<li><strong>Gender-Specific Strategies:</strong>
+<ul>
+<li>Develop gender-specific marketing strategies. For example, create campaigns that resonate with female consumers in high-spending states.</li>
+</ul></li>
+<li><strong>State-Specific Promotions:</strong>
+<ul>
+<li>Implement state-specific promotions, particularly in states with high spending. Customize offers and discounts to cater to the preferences of consumers in these regions.</li>
+</ul></li>
+<li><strong>Enhanced Customer Engagement:</strong>
+<ul>
+<li>Use insights from occupational data to engage with customers through personalized communication. Offer exclusive deals and loyalty programs for professionals.</li>
+</ul></li>
+</ol>
+<pre class="r"><code>library(extrafont)</code></pre>
+<pre><code>## Registering fonts with R</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.4</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(scales) </code></pre>
+<pre><code>## 
+## Attaching package: &#39;scales&#39;
+## 
+## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     discard
+## 
+## The following object is masked from &#39;package:readr&#39;:
+## 
+##     col_factor</code></pre>
+<pre class="r"><code>loadfonts(device = &quot;win&quot;)
+theme_set(
+    theme_minimal() +
+    theme(text = element_text(family = &quot;Roboto&quot;))
+    )
+
+col_theme &lt;- c(&quot;#FF3200&quot;, &quot;#011A51&quot;, &quot;#FBA600&quot;, &quot;#F8C1A6&quot;, &quot;#B3E0BF&quot;,
+&quot;#2A9D3D&quot;, &quot;#EDF181&quot;, &quot;#DB7003&quot;, &quot;#A30000&quot;, &quot;#D1AAC2&quot;,
+&quot;#A5506D&quot;, &quot;#97D1D9&quot;, &quot;#916C37&quot;, &quot;#FF5733&quot;, &quot;#FF0066&quot;, 
+&quot;#328C97&quot;, &quot;#33FF57&quot;, &quot;#3357FF&quot;, &quot;#FF33A1&quot;, &quot;#A133FF&quot;)</code></pre>
+<pre class="r"><code>diwali &lt;- read.csv(&quot;Diwali Sales Data.csv&quot;)
+glimpse(diwali)</code></pre>
+<pre><code>## Rows: 11,251
+## Columns: 15
+## $ User_ID          &lt;int&gt; 1002903, 1000732, 1001990, 1001425, 1000588, 1000588,…
+## $ Cust_name        &lt;chr&gt; &quot;Sanskriti&quot;, &quot;Kartik&quot;, &quot;Bindu&quot;, &quot;Sudevi&quot;, &quot;Joni&quot;, &quot;Jo…
+## $ Product_ID       &lt;chr&gt; &quot;P00125942&quot;, &quot;P00110942&quot;, &quot;P00118542&quot;, &quot;P00237842&quot;, &quot;…
+## $ Gender           &lt;chr&gt; &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;, &quot;M&quot;…
+## $ Age.Group        &lt;chr&gt; &quot;26-35&quot;, &quot;26-35&quot;, &quot;26-35&quot;, &quot;0-17&quot;, &quot;26-35&quot;, &quot;26-35&quot;, …
+## $ Age              &lt;int&gt; 28, 35, 35, 16, 28, 28, 25, 61, 35, 26, 34, 20, 20, 2…
+## $ Marital_Status   &lt;int&gt; 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0,…
+## $ State            &lt;chr&gt; &quot;Maharashtra&quot;, &quot;Andhra\xa0Pradesh&quot;, &quot;Uttar Pradesh&quot;, …
+## $ Zone             &lt;chr&gt; &quot;Western&quot;, &quot;Southern&quot;, &quot;Central&quot;, &quot;Southern&quot;, &quot;Wester…
+## $ Occupation       &lt;chr&gt; &quot;Healthcare&quot;, &quot;Govt&quot;, &quot;Automobile&quot;, &quot;Construction&quot;, &quot;…
+## $ Product_Category &lt;chr&gt; &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto…
+## $ Orders           &lt;int&gt; 1, 3, 3, 2, 2, 1, 4, 1, 2, 4, 1, 2, 2, 4, 3, 2, 3, 1,…
+## $ Amount           &lt;dbl&gt; 23952.00, 23934.00, 23924.00, 23912.00, 23877.00, 238…
+## $ Status           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ unnamed1         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</code></pre>
+</div>
+<div id="data-cleaning" class="section level3">
+<h3>Data Cleaning</h3>
+<ul>
+<li>Renaming Andhra\xa0Pradesh to Andhra Pradesh.</li>
+<li>Converting Marital_Status column values to a factor.
+<ul>
+<li>This would help with clear color differentiation for 1 (as red) and 2 (as blue), instead of a color range of values between 0 and 1.</li>
+</ul></li>
+<li>Removing columns that contain only NA values.</li>
+<li>Getting rid of rows where there aren’t any values recorded for the Amount column.</li>
+</ul>
+<pre class="r"><code>diwali &lt;- diwali |&gt; 
+    mutate(State = recode(State, &quot;Andhra\xa0Pradesh&quot; = &quot;Andhra Pradesh&quot;), .keep = &quot;all&quot; ) |&gt; 
+    mutate(Marital_Status = as.factor(Marital_Status)) |&gt; 
+    select(-Status, -unnamed1) |&gt; 
+    filter(!is.na(Amount))
+
+glimpse(diwali)</code></pre>
+<pre><code>## Rows: 11,239
+## Columns: 13
+## $ User_ID          &lt;int&gt; 1002903, 1000732, 1001990, 1001425, 1000588, 1000588,…
+## $ Cust_name        &lt;chr&gt; &quot;Sanskriti&quot;, &quot;Kartik&quot;, &quot;Bindu&quot;, &quot;Sudevi&quot;, &quot;Joni&quot;, &quot;Jo…
+## $ Product_ID       &lt;chr&gt; &quot;P00125942&quot;, &quot;P00110942&quot;, &quot;P00118542&quot;, &quot;P00237842&quot;, &quot;…
+## $ Gender           &lt;chr&gt; &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;…
+## $ Age.Group        &lt;chr&gt; &quot;26-35&quot;, &quot;26-35&quot;, &quot;26-35&quot;, &quot;0-17&quot;, &quot;26-35&quot;, &quot;26-35&quot;, …
+## $ Age              &lt;int&gt; 28, 35, 35, 16, 28, 28, 25, 35, 26, 34, 20, 20, 26, 2…
+## $ Marital_Status   &lt;fct&gt; 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1,…
+## $ State            &lt;chr&gt; &quot;Maharashtra&quot;, &quot;Andhra Pradesh&quot;, &quot;Uttar Pradesh&quot;, &quot;Ka…
+## $ Zone             &lt;chr&gt; &quot;Western&quot;, &quot;Southern&quot;, &quot;Central&quot;, &quot;Southern&quot;, &quot;Wester…
+## $ Occupation       &lt;chr&gt; &quot;Healthcare&quot;, &quot;Govt&quot;, &quot;Automobile&quot;, &quot;Construction&quot;, &quot;…
+## $ Product_Category &lt;chr&gt; &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto…
+## $ Orders           &lt;int&gt; 1, 3, 3, 2, 2, 1, 4, 2, 4, 1, 2, 2, 4, 2, 1, 1, 1, 4,…
+## $ Amount           &lt;dbl&gt; 23952.00, 23934.00, 23924.00, 23912.00, 23877.00, 238…</code></pre>
+<p></br>
+</br></p>
+</div>
+<div id="what-age-group-spent-the-most" class="section level3">
+<h3>What age group spent the most?</h3>
+<pre class="r"><code>diwali |&gt; 
+    select(Age.Group, Amount) |&gt; 
+    arrange(Age.Group) |&gt; 
+    group_by(Age.Group) |&gt; 
+    summarise(Total_Amount = sum(Amount)) |&gt; 
+    ggplot(aes(Age.Group, Total_Amount, fill = Age.Group)) + 
+    geom_col() +
+    scale_fill_manual(values = col_theme) +
+    labs(
+        title = &quot;Top-Spending Age Group&quot;,
+        subtitle = &quot;Identifying High-Value Demographics&quot;,
+        x = NULL,
+        y = &quot;Expenditure&quot;
+            ) +
+    theme(plot.title = element_text(size = 18, face = &quot;bold&quot;)) +
+    scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    coord_flip()</code></pre>
+<pre><code>## Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+## not found in Windows font database
+## Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+## not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+## not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database</code></pre>
+<p><img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+</br>
+</br></p>
+</div>
+<div id="what-is-the-expenditure-across-genders-for-each-age-group" class="section level3">
+<h3>What is the expenditure across genders for each age group</h3>
+<pre class="r"><code>diwali |&gt; 
+    select(Age.Group, Gender, Amount) |&gt; 
+    arrange(Age.Group) |&gt; 
+    group_by(Age.Group, Gender) |&gt; 
+    summarise(Total_Amount = sum(Amount), .groups = &quot;drop&quot;) |&gt; 
+    ggplot(aes(Age.Group, Total_Amount, fill = Gender)) + 
+    geom_col() +
+    scale_fill_manual(values = col_theme) +
+    labs(
+        title = &quot;Spending Patterns by Age Group and Gender&quot;,
+        subtitle = &quot;A Comparative Analysis&quot;,
+        x = NULL,
+        y = &quot;Expenditure&quot;
+            ) +
+    theme(plot.title = element_text(size = 18, face = &quot;bold&quot;)) +
+    scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    coord_flip()</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database</code></pre>
+<p><img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+</br>
+</br></p>
+</div>
+<div id="what-are-the-occupations-of-people-between-26-35" class="section level3">
+<h3>What are the occupations of people between 26-35</h3>
+<pre class="r"><code>diwali |&gt; 
+    select(Age.Group, Occupation) |&gt; 
+    filter(Age.Group == &quot;26-35&quot;) |&gt; 
+    group_by(Occupation) |&gt; 
+    summarise(Number_Of_Individuals = n()) |&gt; 
+    mutate(Occupation = fct_reorder(Occupation, Number_Of_Individuals)) |&gt; 
+    ggplot(aes(Occupation, Number_Of_Individuals, fill = Occupation)) +
+    geom_col() +
+    scale_fill_manual(values = col_theme) +
+    labs(
+        title = &quot;Key Occupations Among 26-35 Age Group&quot;,
+        x = NULL,
+        y = &quot;Number of Individuals&quot;
+            ) +
+    theme(plot.title = element_text(size = 18, face = &quot;bold&quot;)) +
+    scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    coord_flip()</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database</code></pre>
+<p><img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+</br>
+</br></p>
+</div>
+<div id="which-state-spent-the-most-segregated-by-gender" class="section level3">
+<h3>Which state spent the most (segregated by gender)?</h3>
+<pre class="r"><code>diwali |&gt; 
+    select(State, Amount, Gender) |&gt; 
+    group_by(State, Gender) |&gt; 
+    summarise(Total_Amount = sum(Amount), .groups = &quot;drop&quot;) |&gt; 
+    mutate(State = fct_reorder(State, Total_Amount)) |&gt; 
+    ggplot(aes(State, Total_Amount, fill = Gender)) +
+    geom_col() +
+    scale_fill_manual(values = col_theme) +
+    labs(
+        title = &quot;Top-Spending States by Gender&quot;,
+        subtitle = &quot;Regional Breakdown of Consumer Spending&quot;,
+        x = NULL,
+        y = &quot;Expenditure&quot;
+            ) +
+    theme(plot.title = element_text(size = 18, face = &quot;bold&quot;)) +
+    scale_y_continuous(labels = comma) +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    coord_flip()</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database</code></pre>
+<p><img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+</br>
+</br></p>
+</div>
+<div id="finding-expenditure-of-females-and-males-along-with-thier-marital-status" class="section level3">
+<h3>Finding expenditure of females and males along with thier marital status</h3>
+<pre class="r"><code>diwali |&gt; 
+    select(State, Marital_Status, Gender, Amount) |&gt;
+    arrange(State, Gender) |&gt; 
+    group_by(State, Gender, Marital_Status) |&gt; 
+    summarise(Total_Amount = sum(Amount), .groups = &quot;drop&quot;) |&gt; 
+    mutate(State = fct_reorder(State, Total_Amount)) |&gt; 
+    ggplot(aes(State, Total_Amount, fill = Marital_Status)) +
+    geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;) +
+    labs(title = &quot;Comapring expenditures between married and unmarried individuals&quot;, 
+         subtitle = &quot;Segregated by gender&quot;) +
+    facet_wrap(~ Gender) +
+    coord_flip() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) +
+    scale_fill_manual(values = col_theme) +
+    labs(
+        title = &quot;Spending Trends by Gender and Marital Status&quot;,
+        subtitle = &quot;Understanding Consumer Profiles&quot;,
+        x = NULL,
+        y = &quot;Expenditure&quot;
+            ) +
+    theme(plot.title = element_text(size = 18, face = &quot;bold&quot;)) +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    scale_y_continuous(labels = comma)</code></pre>
+<pre><code>## Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+## not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+## family not found in Windows font database</code></pre>
+<pre><code>## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## font family not found in Windows font database</code></pre>
+<p><img src="/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+</div>
