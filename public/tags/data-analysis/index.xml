@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shishir Ashok – Data Analysis</title>
-    <link>http://localhost:1313/tags/data-analysis/</link>
+    <link>http://localhost:4321/tags/data-analysis/</link>
     <description>Recent content in Data Analysis on Shishir Ashok</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 29 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:4321/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Diwali Sales Data</title>
-      <link>http://localhost:1313/portfolio/diwali-sales/diwali_sales/</link>
+      <link>http://localhost:4321/portfolio/diwali-sales/diwali_sales/</link>
       <pubDate>Tue, 29 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/diwali-sales/diwali_sales/</guid>
+      <guid>http://localhost:4321/portfolio/diwali-sales/diwali_sales/</guid>
       <description>
         
         
@@ -223,7 +223,7 @@
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
   id=&#34;tabs-panel-0&#34;
-  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:1313/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;/div&gt;
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
@@ -279,7 +279,7 @@
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
   id=&#34;tabs-panel-0&#34;
-  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:1313/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;/div&gt;
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
@@ -335,7 +335,7 @@
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
   id=&#34;tabs-panel-0&#34;
-  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:1313/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;/div&gt;
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
@@ -392,7 +392,7 @@
     &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
   id=&#34;tabs-panel-0&#34;
-  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:1313/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;/div&gt;
 
     &lt;div
@@ -450,7 +450,7 @@
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;
   id=&#34;tabs-panel-0&#34;
-  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:1313/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;
+  role=&#34;tabpanel&#34; tabindex=&#34;0&#34;  data-state=&#34;selected&#34; &gt;&lt;img src=&#34;http://localhost:4321/portfolio/Diwali Sales/diwali_sales_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;/div&gt;
 &lt;div
   class=&#34;hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block&#34;

@@ -38,6 +38,26 @@ layout: hextra-home
   >}}
 
   {{< hextra/feature-card
+    title="Olympics 2024 Volleyball Analysis"
+    subtitle="Analysis of volleyball and beach volleyball performance, combining athlete attributes (height, age, gender) with team dynamics and match outcomes."
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    image="/portfolio/Olympics Volleyball Analysis/height_scatter.png"
+    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+    link="https://github.com/alagani414/R-Group-Project"
+  >}}
+
+  {{< hextra/feature-card
+    title="Dublin Crime Spatial Data Analysis"
+    subtitle="Exploring the spatial patterns of crime across Dublin and investigatigating the influence of nearby infrastructure on these incidents."
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    image="/portfolio/Dublin Crime/buffer_analysis.jpeg"
+    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+    link="https://github.com/Shishir-Ashok/dublin_crime_analysis"
+  >}}
+
+  {{< hextra/feature-card
     title="When Maximum Meets Square Root"
     subtitle="Exploring the Fascinating Connection Between Probability Distributions"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
@@ -46,4 +66,5 @@ layout: hextra-home
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
     link="portfolio/when-maximum-meets-square-root/when-maximum-meets-square-root"
   >}}
+
 {{< /hextra/feature-grid >}}
