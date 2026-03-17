@@ -4,10 +4,10 @@
     <a href="https://app.netlify.com/sites/shishir-ashok/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/d6a9b0bb-3a81-484e-85c9-cd373eed1af4/deploy-status"></a> <br/>
 
 Website → [shishir-ashok.netlify.app/](https://shishir-ashok.netlify.app/)
+
 </div>
 
 Welcome to Analytic Alley! This repository is dedicated to data analysis projects conducted in various programming languages like **Python** and **R**. It serves as a growing portfolio of work in data analytics and is hosted as a website on Netlify. This space is regularly updated with new datasets, insights, and methodologies as additional analyses are conducted.
-
 
 # 🌐 About Analytic Alley
 
@@ -22,6 +22,7 @@ Analytic Alley is designed as a platform to explore and share data stories, stat
 
 # 🛠️ Projects
 
+- **[Data Science Master's Thesis](https://github.com/Shishir-Ashok/Analytic-Alley/tree/main/public/portfolio/Thesis)**: ML project on predicting thoracic diseases using chest X-ray images. Achieved a mean ROC-AUC of 0.75 with a 27% reduction in false negatives across 112,120 chest X-rays, earning the highest grade in the MSc cohort (86%) through class imbalance techniques, containerised pipeline deployment, and fully reproducible evaluation.
 - **[Diwali Sales dataset](https://github.com/Shishir-Ashok/Analytic-Alley/tree/main/public/portfolio/Diwali%20Sales)**: Detailed snapshot of consumer behavior during one of the most significant festive periods in India.
 - **[Olympics 2024 Volleyball Analysis](https://github.com/alagani414/R-Group-Project)**: Analysis of volleyball and beach volleyball performance, combining athlete attributes (height, age, gender) with team dynamics and match outcomes.
 - **[Dublin Crime Spatial Data Analysis](https://github.com/Shishir-Ashok/dublin_crime_analysis)**: Exploring the spatial patterns of crime across Dublin and investigatigating the influence of nearby infrastructure on these incidents.
